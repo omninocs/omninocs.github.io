@@ -163,7 +163,8 @@ body {
 .justified-grid-gallery {
   --space: 4px;
   --min-height: 190px;
-  --last-row-background: rgb(188 234 153);
+  --last-row-background: none;
+  --last
 }
 /* Settings end */
 

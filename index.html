@@ -213,30 +213,6 @@
       </div>
     </section>
 
-    <!-- <section class="justified-grid-gallery">
-  <figure style="--width: 640; --height: 520; ">
-    <img src="https://loremflickr.com/640/520/butterfly?random=1" alt="a random image with a butterfly" />
-  </figure>
-  <figure style="--width: 500; --height: 420; ">
-    <img src="https://loremflickr.com/500/420/butterfly?random=2" alt="a random image with a butterfly" />
-  </figure>
-  <figure style="--width: 710; --height: 580; ">
-    <img src="https://loremflickr.com/710/580/butterfly?random=3" alt="a random image with a butterfly" />
-  </figure>
-  <figure style="--width: 760; --height: 540; ">
-    <img src="https://loremflickr.com/760/540/butterfly?random=4" alt="a random image with a butterfly" />
-  </figure>
-  <figure style="--width: 690; --height: 570; ">
-    <img src="https://loremflickr.com/690/570/butterfly?random=5" alt="a random image with a butterfly" />
-  </figure>
-  <figure style="--width: 540; --height: 340; ">
-    <img src="https://loremflickr.com/540/340/butterfly?random=6" alt="a random image with a butterfly" />
-  </figure>
-  <figure style="--width: 340; --height: 550; ">
-    <img src="https://loremflickr.com/340/550/butterfly?random=7" alt="a random image with a butterfly" />
-  </figure>
-</section> -->
-
     <section class="section">
       <div class="container is-max-desktop">
         <!-- Abstract. -->
@@ -314,35 +290,77 @@
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">NOCS predictions</h2>
-        <div class="content">
-          <!-- <img
-            src="./static/images/model_arch.jpg"
-            class="dataset-figure"
-            alt="NOCSformer model architecture"
-          /> -->
+        <h2 class="content has-text-centered">
+          NOCSformer generalizes to the wide range of object classes and domains in OmniNOCS, including indoor and outdoor scenes, as well as object-centric images.
+        </h2>        
+        <div class="container is-max-desktop">
+          <section class="justified-grid-gallery">
+            <figure style="--width: 730; --height: 530">
+              <img src="./static/images/omninocs_res/box3d_0010.png" />
+            </figure>
+            <figure style="--width: 540; --height: 720">
+              <img src="./static/images/omninocs_res/box3d_0011.png" />
+            </figure>
+            <!-- <figure style="--width: 540; --height: 720">
+              <img src="./static/images/omninocs_res/box3d_0012.png" />
+            </figure> -->
+            <!-- <figure style="--width: 540; --height: 720">
+              <img src="./static/images/omninocs_res/box3d_0019.png" />
+            </figure> -->
+            <figure style="--width: 1280; --height: 960">
+              <img src="./static/images/omninocs_res/box3d_0022.png" />
+            </figure>
+            <figure style="--width: 730; --height: 530">
+              <img src="./static/images/omninocs_res/box3d_0031.png" />
+            </figure>
+            <!-- <figure style="--width: 896; --height: 448">
+              <img src="./static/images/omninocs_res/box3d_0034.png" />
+            </figure> -->
+            <figure style="--width: 896; --height: 448">
+              <img src="./static/images/omninocs_res/box3d_0073.png" />
+            </figure>
+            <figure style="--width: 896; --height: 597">
+              <img src="./static/images/omninocs_res/box3d_0039.png" />
+            </figure>
+            <figure style="--width: 960; --height: 1280">
+              <img src="./static/images/omninocs_res/box3d_0048.png" />
+            </figure>
+            <figure style="--width: 896; --height: 504">
+              <img src="./static/images/omninocs_res/box3d_0169.png" />
+            </figure>
+            <figure style="--width: 540; --height: 720">
+              <img src="./static/images/omninocs_res/box3d_0243.png" />
+            </figure>
+            <figure style="--width: 896; --height: 597">
+              <img src="./static/images/omninocs_res/box3d_0068.png" />
+            </figure>
+            <figure style="--width: 540; --height: 720">
+              <img src="./static/images/omninocs_res/box3d_0406.png" />
+            </figure>
+          </section>
         </div>
-        <h2 class="content has-text-centered has-text-justified">
-          TODO: show 2d input, 3d NOCS, 3d pointcloud predictions for 1-2
-          examples.
-        </h2>
+
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Transfer to web images</h2>
-        <div class="content">
-          <!-- <img
-            src="./static/images/model_arch.jpg"
-            class="dataset-figure"
-            alt="NOCSformer model architecture"
-          /> -->
-        </div>
+        <h2 class="title is-3 has-text-centered">
+          Generalization to web images
+        </h2>
         <h2 class="content has-text-centered has-text-justified">
           Our model is able to generalize to datasets beyond the training
           distribution. We show results on some web images, and some images from
           the COCO dataset.
         </h2>
+        <div class="content is-centered has-text-centered">
+          <img
+            src="./static/images/web_results.jpg"
+            class="dataset-figure"
+            alt="Predictions on web images"
+            width="75%"
+          />
+        </div>
       </div>
     </section>
 
@@ -414,6 +432,8 @@
       </div>
     </section>
 
+
+
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">More NOCS predictions!</h2>
@@ -449,7 +469,7 @@
           <div class="column is-full-width">
             <h2 class="title is-3">Related Links</h2>
             TODO (optional): Add links to related work here
-<!-- 
+            <!-- 
             <div class="content has-text-justified">
               <p>
                 <a href="https://arxiv.org/abs/2104.09125"
