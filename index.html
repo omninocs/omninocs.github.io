@@ -2,8 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="description"
+    <meta name="description"
       content="OmniNOCS dataset and NOCSformer model for predicting NOCS and 6DoF pose of 2D objects"
     />
     <meta name="keywords" content="OmniNOCS, NOCS, pose, 3D objects" />
@@ -50,6 +49,8 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+
   </head>
   <body>
     <!-- <nav class="navbar" role="navigation" aria-label="main navigation"> -->
@@ -123,8 +124,11 @@
               </div>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block"><sup>1</sup>Georgia Tech,</span>
-                <span class="author-block"><sup>2</sup>Google Research</span>
+                <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
+                <span class="author-block"><sup>2</sup>Google Research*</span>
+              </div>
+              <div class="column has-text-centered">
+                *Now Google DeepMind
               </div>
 
               <div class="column has-text-centered">
@@ -174,13 +178,13 @@
                   </span>
                   <!-- Dataset Link. -->
                   <span class="link-block">
-                    <!-- <a href="https://github.com/todo/add/data/link"
+                    <a href="https://omninocs.github.io/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Dataset</span>
-                  </a> -->
+                  <span>Dataset (coming soon)</span>
+                  </a>
                   </span>
                 </div>
               </div>
@@ -192,22 +196,36 @@
 
     <section class="hero teaser">
       <div class="container is-max-desktop">
-        <div class="hero-body">
+        <div class="hero-body is-centered has-text-centered">
           <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video> -->
           <!-- <div class="hero-body"> -->
           <img
-            src="./static/images/dataset_figure.png"
+            src="./static/images/dataset_figure_mini.jpg"
             class="dataset-figure"
             alt="OmniNOCS dataset"
           />
           <!-- </div> -->
           <h2 class="subtitle has-text-centered">
-            OmniNOCS unifies multiple datasets across different domains to
-            provide a NOCS dataset with 100+ object classes. It is the largest
-            NOCS dataset to date.
+            OmniNOCS is a unified NOCS (Normalized Object Coordinate Space) dataset that contains data across different domains with 100+ object classes. It is the largest NOCS dataset to date.
+          </h2>
+        </div>
+      </div>
+    </section>          
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body is-centered has-text-centered">          <!-- <div class="content is-centered has-text-centered"> -->
+            <img
+              src="./static/images/web_results.jpg"
+              class="dataset-figure"
+              alt="Predictions on web images"
+              width="75%"
+            />
+          <!-- </div> -->
+          <h2 class="subtitle has-text-centered">
+            We use OmniNOCS to train NOCSformer, a transformer-based model that can predict NOCS and 6DoF poses from 2D object boxes. NOCSformer does not contains any class-specific parameters and generalizes to in-the-wild images from internet collections.
           </h2>
         </div>
       </div>
@@ -289,10 +307,12 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">NOCS predictions</h2>
+        <h2 class="title is-3 has-text-centered">NOCS predictions across OmniNOCS</h2>
         <h2 class="content has-text-centered">
-          NOCSformer generalizes to the wide range of object classes and domains in OmniNOCS, including indoor and outdoor scenes, as well as object-centric images.
-        </h2>        
+          NOCSformer generalizes to the wide range of object classes and domains
+          in OmniNOCS, including indoor and outdoor scenes, as well as
+          object-centric images.
+        </h2>
         <div class="container is-max-desktop">
           <section class="justified-grid-gallery">
             <figure style="--width: 730; --height: 530">
@@ -339,37 +359,14 @@
             </figure>
           </section>
         </div>
-
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">
-          Generalization to web images
-        </h2>
-        <h2 class="content has-text-centered has-text-justified">
-          Our model is able to generalize to datasets beyond the training
-          distribution. We show results on some web images, and some images from
-          the COCO dataset.
-        </h2>
-        <div class="content is-centered has-text-centered">
-          <img
-            src="./static/images/web_results.jpg"
-            class="dataset-figure"
-            alt="Predictions on web images"
-            width="75%"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Temporal consistency</h2>
+        <!-- <h2 class="title is-3 has-text-centered">Temporal consistency</h2> -->
         <h2 class="content has-text-centered">
-          The Objectron sequences show the temporal consistency of our per-frame
-          NOCS predictions and 6DoF poses.
+          The per-frame predictions from NOCSformer on the Objectron video sequences below show that our model is temporally consistent.
         </h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item item-chair">
@@ -432,96 +429,74 @@
       </div>
     </section>
 
-
-
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">More NOCS predictions!</h2>
-        <div class="content">
-          <!-- <img
-            src="./static/images/model_arch.jpg"
-            class="dataset-figure"
-            alt="NOCSformer model architecture"
-          /> -->
-        </div>
-        <h2 class="content has-text-centered has-text-justified">
-          TODO: show 2d input, 3d NOCS, 3d pointcloud predictions for 1-2
-          examples.
+        <h2 class="title is-3 has-text-centered">NOCS predictions on COCO objects</h2>
+        <h2 class="content has-text-centered">
+          NOCSformer can generalize to in-the-wild objects in COCO images when trained on OmniNOCS.
         </h2>
+        <div class="container is-max-desktop">
+          <section class="justified-grid-gallery">
+            <figure style="--width: 896; --height: 672">
+              <img src="./static/images/coco_images/image3d_1.png" />
+            </figure>
+            <figure style="--width: 896; --height: 672">
+              <img src="./static/images/coco_images/image3d_4.png" />
+            </figure>
+            <figure style="--width: 896; --height: 448">
+              <img src="./static/images/coco_images/image3d_7.png" />
+            </figure>
+            <figure style="--width: 896; --height: 597">
+              <img src="./static/images/coco_images/image3d_019.png" />
+            </figure>
+            <figure style="--width: 896; --height: 672">
+              <img src="./static/images/coco_images/image3d_021.png" />
+            </figure>
+            <figure style="--width: 672; --height: 896">
+              <img src="./static/images/coco_images/image3d_022.png" />
+            </figure>
+            <figure style="--width: 896; --height: 672">
+              <img src="./static/images/coco_images/image3d_034.png" />
+            </figure>
+          </section>
+        </div>
       </div>
     </section>
-    <!-- <div class="grid">
-      <div class="item left">
-        <img src="./static/images/Picture1.gif">
-      </div>
-      <div class="item upper_right">
-        <img src="./static/images/input.png">
-      </div>
-      <div class="item lower_right">
-        <img src="./static/images/nocs.png">
-      </div>
-    </div> -->
 
     <section class="section">
       <div class="container is-max-desktop">
-        <!-- Concurrent Work. -->
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3">Related Links</h2>
-            TODO (optional): Add links to related work here
-            <!-- 
+            <h2 class="title is-3">Related Work</h2>
             <div class="content has-text-justified">
               <p>
-                <a href="https://arxiv.org/abs/2104.09125"
-                  >Progressive Encoding for Neural Optimization</a
-                >
-                introduces an idea similar to our windowed position encoding for
-                coarse-to-fine optimization.
+                <a href="https://arxiv.org/abs/2207.10660">
+                  Omni3D: A Large Benchmark and Model for 3D Object Detection in the Wild
+                </a>
+                introduced a large-scale cross-domain 3D object detection dataset that inspired our work. 
               </p>
               <p>
                 <a
-                  href="https://www.albertpumarola.com/research/D-NeRF/index.html"
-                  >D-NeRF</a
-                >
-                and
-                <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/"
-                  >NR-NeRF</a
-                >
-                both use deformation fields to model non-rigid scenes.
+                  href="https://geometry.stanford.edu/projects/NOCS_CVPR2019"
+                  >Normalized Object Coordinate Space for Category-Level 6D Object Pose and Size Estimation</a> introduced the concept of NOCS and its applications in 6D pose estimation.
               </p>
-              <p>
-                Some works model videos with a NeRF by directly modulating the
-                density, such as
-                <a href="https://video-nerf.github.io/">Video-NeRF</a>,
-                <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and
-                <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-              </p>
-              <p>
-                There are probably many more by the time you are reading this.
-                Check out
-                <a href="https://dellaert.github.io/NeRF/"
-                  >Frank Dellart's survey on recent NeRF papers</a
-                >, and
-                <a href="https://github.com/yenchenlin/awesome-NeRF"
-                  >Yen-Chen Lin's curated list of NeRF papers</a
-                >.
-              </p>
-            </div> -->
+            </div>
           </div>
         </div>
         <!--/ Concurrent Work. -->
       </div>
     </section>
 
-    <section class="section" id="BibTeX">
+    <!-- <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
+
         <pre><code>
           TODO: Add BibTeX here.
         </code></pre>
       </div>
-    </section>
-
+    </section> -->
+    
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
@@ -547,11 +522,10 @@
                   href="http://creativecommons.org/licenses/by-sa/4.0/"
                   >Creative Commons Attribution-ShareAlike 4.0 International
                   License. </a
-                >. Page template borrowed from
-                <a href="https://github.com/nerfies/nerfies.github.io"
-                  >NeRFies</a
-                >.
-              </p>
+                >Page template borrowed from
+                <a href="https://github.com/nerfies/nerfies.github.io">
+                  NeRFies</a>.
+                </p>
               <p></p>
             </div>
           </div>
